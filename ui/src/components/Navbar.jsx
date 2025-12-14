@@ -20,9 +20,9 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden flex-1 justify-end gap-8 md:flex">
             <nav className="flex items-center gap-9">
-              <Link href={"/#benchmarks"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Benchmarks</Link>
-              <Link href={"/#modes"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Execution Modes</Link>
-              <Link href={"/#pipeline"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Pipeline Visulization</Link>
+              <Link href={"/#benchmarks"} className="text-sm font-medium leading-normal text-white transition-colors hover:text-primary">Benchmarks</Link>
+              <Link href={"/#modes"} className="text-sm font-medium leading-normal text-white transition-colors hover:text-primary">Execution Modes</Link>
+              <Link href={"/#pipeline"} className="text-sm font-medium leading-normal text-white transition-colors hover:text-primary">Pipeline Visulization</Link>
               <Link href={"/upload"} className='text-sm font-medium p-2 px-4 leading-normal text-white bg-blue-400 rounded-full transition-colors hover:bg-blue-500'>Get Started</Link>
             </nav>
           </div>
@@ -45,9 +45,9 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="border-t border-gray-700/50 bg-gradient-to-b from-gray-900/98 to-gray-800/98 backdrop-blur-xl px-4 py-4 md:hidden shadow-xl">
           <nav className="flex flex-col gap-4">
-            <Link href={"#benchmarks"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Benchmarks</Link>
-              <Link href={"#modes"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Execution Modes</Link>
-              <Link href={"#pipeline"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Pipeline Visulization</Link>
+            <Link href={"/#benchmarks"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Benchmarks</Link>
+              <Link href={"/#modes"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Execution Modes</Link>
+              <Link href={"/#pipeline"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white" onClick={()=>setIsMenuOpen(!isMenuOpen)}>Pipeline Visulization</Link>
               <Link href={"/upload"} className='text-sm font-medium p-2 px-4 leading-normal text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full transition-all hover:scale-105 shadow-lg'>Get Started</Link>
           </nav>
         </div>
