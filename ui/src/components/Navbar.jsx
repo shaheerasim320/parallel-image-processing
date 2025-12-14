@@ -20,9 +20,9 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden flex-1 justify-end gap-8 md:flex">
             <nav className="flex items-center gap-9">
-              <Link href={"#benchmarks"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Benchmarks</Link>
-              <Link href={"#modes"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Execution Modes</Link>
-              <Link href={"#pipeline"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Pipeline Visulization</Link>
+              <Link href={"/#benchmarks"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Benchmarks</Link>
+              <Link href={"/#modes"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Execution Modes</Link>
+              <Link href={"/#pipeline"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Pipeline Visulization</Link>
               <Link href={"/upload"} className='text-sm font-medium p-2 px-4 leading-normal text-white bg-blue-400 rounded-full transition-colors hover:bg-blue-500'>Get Started</Link>
             </nav>
           </div>
