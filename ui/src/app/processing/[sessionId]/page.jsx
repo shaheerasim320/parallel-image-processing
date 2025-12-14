@@ -52,7 +52,7 @@ const Processing = () => {
   }, [sessionId, markComplete, router]);
 
   return (
-    <div className="mt-14 min-h-screen flex flex-col font-display bg-[#f5f7f8] text-text-main overflow-x-hidden relative">
+    <div className="mt-14 pt-4 min-h-screen flex flex-col font-display bg-[#f5f7f8] text-text-main overflow-x-hidden relative">
       <BackgroundDecor />
       <main className="flex-grow flex flex-col items-center justify-center p-4 md:p-8 w-full max-w-7xl mx-auto z-10">
         <div className="w-full max-w-[800px] flex flex-col gap-8 md:gap-12 animate-fade-in-up transition-opacity duration-700">

@@ -80,7 +80,7 @@ export default function Upload() {
   return (
     <>
 
-      <div className="flex-grow w-full max-w-7xl mx-auto px-6 py-10 mt-14">
+      <div className="flex-grow w-full max-w-7xl mx-auto px-6 py-10 mt-22">
         {/* Heading */}
         <div className="mb-10 max-w-5xl mx-auto">
           <h2 className="text-4xl font-black tracking-tight mb-2">
