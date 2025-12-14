@@ -8,7 +8,7 @@ const ConfigPanel = ({ mode, setMode, config, setConfig, handleClick, loading })
     };
 
     return (
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-sm border border-gray-100 dark:border-[#333] p-6 h-full flex flex-col">
+        <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-sm border border-gray-100 dark:border-[#333] p-6 h-2xl flex flex-col">
             {/* Header */}
             <div className="mb-6 pb-6 border-b border-gray-100 dark:border-[#333]">
                 <h3 className="font-bold text-lg flex items-center gap-2 mb-1">
