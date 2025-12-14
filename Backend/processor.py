@@ -1,4 +1,3 @@
-# processor.py
 import time
 from concurrent.futures import ThreadPoolExecutor
 

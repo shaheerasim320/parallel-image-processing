@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
 
-const TOTAL_TIME = 20; 
+const TIME_PER_IMAGE = 0.5;
 const STATUS_MESSAGES = [
   "Analyzing pictures...",
   "Analyzing noise...",
@@ -11,6 +11,7 @@ const STATUS_MESSAGES = [
 ];
 
 export const useSimulation = ({ totalImages }) => {
+  const totalTime = TIME_PER_IMAGE * totalImages;
   const [stats, setStats] = useState({
     progress: 0,
     cpu: 42,
@@ -18,9 +19,9 @@ export const useSimulation = ({ totalImages }) => {
     processedItems: 0,
     totalItems: totalImages,
     statusText: STATUS_MESSAGES[0],
-    timeRemaining: TOTAL_TIME
+    timeRemaining: totalTime
   });
-
+  
   const [isActive, setIsActive] = useState(true);
 
   const updateStats = useCallback(() => {
@@ -39,9 +40,9 @@ export const useSimulation = ({ totalImages }) => {
       const cpuNoise = Math.floor(Math.random() * 10) - 5;
       const memNoise = Math.floor(Math.random() * 20) - 10;
 
-      const nextProgress = prev.progress + 0.5;
+      const nextProgress = prev.progress + (100 / totalTime);
       const nextItems = Math.floor((nextProgress / 100) * totalImages);
-      const nextTimeRemaining = Math.max(0, Math.ceil(TOTAL_TIME * (1 - nextProgress / 100)));
+      const nextTimeRemaining = Math.max(0, Math.ceil(totalTime * (1 - nextProgress / 100)));
 
       const msgIndex = Math.floor((nextProgress / 100) * STATUS_MESSAGES.length) % STATUS_MESSAGES.length;
 
@@ -55,7 +56,7 @@ export const useSimulation = ({ totalImages }) => {
         timeRemaining: nextTimeRemaining
       };
     });
-  }, [totalImages]);
+  }, [totalImages,totalTime]);
 
   useEffect(() => {
     if (!isActive) return;

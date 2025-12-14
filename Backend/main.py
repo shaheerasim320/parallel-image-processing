@@ -16,9 +16,12 @@ app = FastAPI(title="Parallel Image Processing Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=[
+        "http://localhost:3000",  
+        "https://imgproc-lab.vercel.app/"  
+    ],
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
 
 UPLOAD_DIR = "uploads"
@@ -100,10 +103,7 @@ def process_job(
     segment_mode
 ):
     try:
-        # 1️⃣ Load images
         image_data_list = load_images(img_paths)
-
-        # 2️⃣ Auto thresholds
         lower, upper = calculate_global_noise_thresholds(img_paths)
 
         args_list = [
@@ -120,17 +120,14 @@ def process_job(
             for path, data in image_data_list
         ]
 
-        # 3️⃣ SERIAL
         serial_results, serial_time = run_serial(args_list)
 
-        # 4️⃣ PARALLEL
         parallel_results, parallel_time = run_parallel(args_list)
 
         speedup = round(
             serial_time / parallel_time, 2
         ) if parallel_time > 0 else 0
 
-        # 5️⃣ Save output images (parallel results)
         response_images = []
 
         for path, img in parallel_results:
@@ -143,7 +140,6 @@ def process_job(
                 "processed": f"/outputs/{session_id}/final_{name}"
             })
 
-        # 6️⃣ Store FINAL RESPONSE
         job_results[session_id] = {
             "session_id": session_id,
             "metrics": {

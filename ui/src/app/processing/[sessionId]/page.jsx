@@ -17,14 +17,12 @@ const Processing = () => {
 
   const { stats, cancelProcessing, markComplete } = useSimulation({ totalImages });
 
-  // Redirect if no session or totalImages
   useEffect(() => {
     if (!totalImages) {
       router.replace("/p404");
     }
   }, [totalImages, router]);
 
-  // Poll backend for status
   useEffect(() => {
     if (!sessionId) return;
 

@@ -336,9 +336,6 @@ def grabcut_segmentation(img):
 def process_single_image_advanced(img_path,img_data,noise_mode="none", enhance_mode="none", segment_mode="none",lower_threshold=None, upper_threshold=None):
     img = img_data.copy()
 
-    # ----------------------------------
-    # 1️⃣ NOISE REMOVAL
-    # ----------------------------------
     if noise_mode == "none":
         denoised = img
 
@@ -363,9 +360,6 @@ def process_single_image_advanced(img_path,img_data,noise_mode="none", enhance_m
     else:
         raise ValueError(f"Unknown noise_mode: {noise_mode}")
 
-    # ----------------------------------
-    # 2️⃣ ENHANCEMENT
-    # ----------------------------------
     if enhance_mode == "none":
         enhanced = denoised
 
@@ -387,9 +381,6 @@ def process_single_image_advanced(img_path,img_data,noise_mode="none", enhance_m
     else:
         raise ValueError(f"Unknown enhance_mode: {enhance_mode}")
 
-    # ----------------------------------
-    # 3️⃣ SEGMENTATION
-    # ----------------------------------
     if segment_mode == "none":
         return img_path, enhanced
 
@@ -429,9 +420,7 @@ if __name__ == "__main__":
     for args in args_list_adv:
         res = process_single_image_advanced(*args)
 
-    # =========================
-    # 🔹 SERIAL EXECUTION
-    # =========================
+
     print("\n============================")
     print("🔵 Running SERIAL processing")
     print("============================")
@@ -446,9 +435,6 @@ if __name__ == "__main__":
 
     print(f"\nSerial Time: {end_serial - start_serial:.2f} sec")
 
-    # =========================
-    # 🔹 PARALLEL EXECUTION
-    # =========================
     print("\n============================")
     print("🟣 Running PARALLEL processing")
     print("============================")
