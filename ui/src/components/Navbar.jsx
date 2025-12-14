@@ -20,13 +20,10 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden flex-1 justify-end gap-8 md:flex">
             <nav className="flex items-center gap-9">
-              <Link href={"#benchmarks"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white hover:scale-105">Benchmarks</Link>
-              <Link href={"#modes"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white hover:scale-105">Execution Modes</Link>
-              <Link href={"#pipeline"} className="text-sm font-medium leading-normal text-gray-300 transition-colors hover:text-white hover:scale-105">Pipeline Visulization</Link>
-              <Link href={"/upload"} className='group relative text-sm font-medium p-2 px-4 leading-normal text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full transition-all hover:scale-105 shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70 overflow-hidden'>
-                <span className="relative z-10">Get Started</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
-              </Link>
+              <Link href={"/#benchmarks"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Benchmarks</Link>
+              <Link href={"/#modes"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Execution Modes</Link>
+              <Link href={"/#pipeline"} className="text-sm font-medium leading-normal text-[#181811] transition-colors hover:text-primary">Pipeline Visulization</Link>
+              <Link href={"/upload"} className='text-sm font-medium p-2 px-4 leading-normal text-white bg-blue-400 rounded-full transition-colors hover:bg-blue-500'>Get Started</Link>
             </nav>
           </div>
 
