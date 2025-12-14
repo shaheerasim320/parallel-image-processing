@@ -72,7 +72,7 @@ export default function Upload() {
     } catch (error) {
       toast.error("Failed to upload images. Please try again.");
     }finally{
-      setLoading
+      setLoading(false);
     }
   }
 
