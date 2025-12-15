@@ -372,7 +372,7 @@ def process_single_image_advanced(img_path,img_data,noise_mode="none", enhance_m
     elif enhance_mode == "unsharp":
         enhanced = unsharp_masking(denoised)
 
-    elif enhance_mode == "histogram":
+    elif enhance_mode == "hist":
         enhanced = histogram_equalization(denoised)
 
     elif enhance_mode == "auto":
