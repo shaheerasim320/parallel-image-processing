@@ -163,6 +163,13 @@ Backend:
 - Download Images: Processed images can be downloaded directly from /outputs/{session_id}/.
 - Upload Modes: Users can select auto or advanced mode when uploading images.
 
+### Deployment / WSGI / CORS Notes
+
+- **CORS configuration**: Origins must match exactly. Trailing slashes, different schemes, or subdomains will break browser requests.  
+  ```python
+  allow_origins=["https://imgproc-lab.vercel.app"] 
+  allow_origins=["https://imgproc-lab.vercel.app/"]
+
 ## How the App Works
 
 1. User uploads images via /upload and selects mode.

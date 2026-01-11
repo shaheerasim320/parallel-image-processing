@@ -20,7 +20,7 @@ const Hero = () => {
                     Parallel Image Processing
                   </h1>
                   <h2 className="mt-2 text-lg font-normal leading-relaxed text-gray-300">
-                    A PDC project demonstrating significant performance improvements in image pipelines using multi-threading and optimized data partitioning.
+                    An advanced image processing pipeline optimized with multi-threading and efficient data partitioning, achieving significant performance improvements.
                   </h2>
                 </div>
                 
