@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PDC Project - Parallel Image Processing",
+  title: "Parallel Image Processing",
   description: "Redefining Image Processing with Parallel Computing",
 };
 
